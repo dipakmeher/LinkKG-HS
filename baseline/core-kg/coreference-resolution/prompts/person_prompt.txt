@@ -5,17 +5,17 @@ Note: This is an unsupervised coreference resolution task. The instructions belo
 - Coreference Resolution Rules - Person Entity Type -
 
 1. General Person Entity Resolution:
-   - After a person is introduced with their full name (e.g., Paul Silva), replace all subsequent mentions—including last name only (e.g., Silva), role + last name (e.g., Agent Silva), and abbreviated forms (e.g., BPA Silva)—with the full name only (e.g., Paul Silva). Do this for every mention throughout the document.
-   - In all coreference resolutions, strip titles from mentions. Whether the reference includes a title and last name (e.g., "Agent Ibarra") or title and full name (e.g., "Agent Juan Carlos De Arcos"), resolve to the full name only (e.g., "Hector David Ibarra", "Juan Carlos De Arcos"). Titles must not appear in any resolved coreference.
+   - After a person is introduced with their full name (e.g., FirstName LastName), replace all subsequent mentions—including last name only (e.g., LastName), role + last name (e.g., Agent LastName), and abbreviated forms (e.g., BPA LastName)—with the full name only (e.g., FirstName LastName). Do this for every mention throughout the document.
+   - In all coreference resolutions, strip titles from mentions. Whether the reference includes a title and last name (e.g., "Agent LastName1") or title and full name (e.g., "Agent FirstName2 MiddleName2 LastName2"), resolve to the full name only (e.g., "Hector FirstName1 LastName1", "FirstName2 MiddleName2 LastName2"). Titles must not appear in any resolved coreference.
    - For compound names (e.g., Hector David Ibarra, Maria del Rosario Rodriguez), match coreferences based on the last component of the last name (e.g., Ibarra, Rodriguez). Resolve all such references to the full name without any titles.
-   - If two or more individuals share the same last name, resolve ambiguous mentions (e.g., "Rodriguez") conservatively. Match to the most recently mentioned full name, unless context clearly indicates another.
+   - If two or more individuals share the same last name, resolve ambiguous mentions (e.g., "LastName3") conservatively. Match to the most recently mentioned full name, unless context clearly indicates another.
    - If abbreviated titles like "BPA [Last Name]", "Agent [Last Name]", or "Officer [Last Name]" appear after a full name has been introduced, replace them with the full name only, and remove the title completely.
-   - If a person is introduced with a role-based title (e.g., "Defendant Maria De Jesus Garcia"), remove the title and retain only the full name in all occurrences, including the original mention. For example, "Defendant Maria De Jesus Garcia" should become "Maria De Jesus Garcia".
-   - If a person is introduced with a title and full name (e.g., "Border Patrol Agent Hector David Ibarra"), retain the title and name exactly as it appears in the original sentence. For all later coreferences (e.g., "Agent Ibarra", "Ibarra"), resolve to the full name only, and do not include the title.
+   - If a person is introduced with a role-based title (e.g., "Defendant "FirstName2 MiddleName2 LastName2"), remove the title and retain only the full name in all occurrences, including the original mention. For example, "Defendant "FirstName2 MiddleName2 LastName2" should become ""FirstName2 MiddleName2 LastName2".
+   - If a person is introduced with a title and full name (e.g., "Border Patrol Agent FirstName1 LastName1"), retain the title and name exactly as it appears in the original sentence. For all later coreferences (e.g., "Agent LastName1", "LastName1"), resolve to the full name only, and do not include the title.
    - This rule applies consistently to every mention in the document. Do not skip replacing any valid coreference, regardless of how many times it appears or where it occurs (e.g., headers, footnotes, transcripts, or long paragraphs).
 
 2. Multiple Defendants (Special Case):
-   - If multiple defendants are introduced (e.g., RICARDO RODRIGUEZ, JR. and IGNACIO RODRIGUEZ, JR.), resolve all mentions of "the defendants" to a comma-separated list of their full names, in the order they were introduced.
+   - If multiple defendants are introduced (e.g., FirstName3 LastName3, JR. and FirstName4 LastName3, JR.), resolve all mentions of "the defendants" to a comma-separated list of their full names, in the order they were introduced.
    - Resolve "the defendant" (singular) to the most recently mentioned full defendant name, unless the context clearly indicates another.
    - When "Defendant" is used more than once and multiple people share the title, always resolve to the most recently mentioned full name, unless context clearly indicates otherwise.
    - Do not leave any such references (singular or plural) unresolved, even if they appear in sections like footnotes, concluding paragraphs, or after phrases such as "End of Document".
@@ -27,37 +27,35 @@ Note: This is an unsupervised coreference resolution task. The instructions belo
 Below are examples showing how to resolve references to people, including handling of last names, titles, and role-based mentions like "Defendant."
 ####################
 
-Example 01:   
-Input_text:  
-Border Patrol Agent Bradford Sallee observed the vehicle near milepost 20. BPA Sallee contacted another agent for assistance. Later, Agent Sallee initiated a traffic stop based on suspicious behavior.
-Output:  
-Border Patrol Agent Bradford Sallee observed the vehicle near milepost 20. Bradford Sallee contacted another agent for assistance. Later, Bradford Sallee initiated a traffic stop based on suspicious behavior.
+Example 01:
+Input_text:
+Border Security Officer Rajesh Kumar observed the vehicle near milestone 20. BSO Kumar contacted another officer for assistance. Later, Officer Kumar initiated a traffic stop based on suspicious behavior.
+Output:
+Border Security Officer Rajesh Kumar observed the vehicle near milestone 20. Rajesh Kumar contacted another officer for assistance. Later, Rajesh Kumar initiated a traffic stop based on suspicious behavior.
 
---------------------
+⸻
 
-Example 02:  
-Input_text:  
-Border Patrol Agent Hector David Ibarra led the operation. Ibarra coordinated with the local sheriff. Nicole Martinez is a defendant in the case. The defendant was last seen near Laredo, Texas—between 11:00 p.m. and 12:00 a.m. 
-Output:  
-Border Patrol Agent Hector David Ibarra led the operation. Hector David Ibarra coordinated with the local sheriff. Nicole Martinez is a defendant in the case. Nicole Martinez was last seen near Laredo, Texas—between 11:00 p.m. and 12:00 a.m.
+Example 02:
+Input_text:
+Border Security Officer Anil Deshmukh led the operation. Deshmukh coordinated with the local police inspector. Sunita Reddy is a defendant in the case. The defendant was last seen near Varanasi, Uttar Pradesh—between 11:00 p.m. and 12:00 a.m.
+Output:
+Border Security Officer Anil Deshmukh led the operation. Anil Deshmukh coordinated with the local police inspector. Sunita Reddy is a defendant in the case. Sunita Reddy was last seen near Varanasi, Uttar Pradesh—between 11:00 p.m. and 12:00 a.m.
 
+⸻
 
---------------------
+Example 03:
+Input_text:
+RAVI SHARMA and VIJAY SHARMA are the defendants in the case. The defendants were observed near the border at 3:00 a.m. The defendant later attempted to flee on foot.
+Output:
+RAVI SHARMA and VIJAY SHARMA are the defendants in the case. RAVI SHARMA and VIJAY SHARMA were observed near the border at 3:00 a.m. VIJAY SHARMA later attempted to flee on foot.
 
-Example 03:  
-Input_text:  
-RICARDO RODRIGUEZ, JR. and IGNACIO RODRIGUEZ, JR. are the defendants in the case. The defendants were observed near the border at 3:00 a.m. The defendant later attempted to flee on foot.
-Output:  
-RICARDO RODRIGUEZ, JR. and IGNACIO RODRIGUEZ, JR. are the defendants in the case. RICARDO RODRIGUEZ, JR. and IGNACIO RODRIGUEZ, JR. were observed near the border at 3:00 a.m. IGNACIO RODRIGUEZ, JR. later attempted to flee on foot.
+⸻
 
---------------------
-
-Example 04:  
-Input_text:  
-Homeland Security Inspector Juan Carlos De Arcos questioned the suspect. Agent De Arcos later returned to the station. Agent Juan Carlos De Arcos filed a report.
-
-Output:  
-Homeland Security Inspector Juan Carlos De Arcos questioned the suspect. Juan Carlos De Arcos later returned to the station. Juan Carlos De Arcos filed a report.
+Example 04:
+Input_text:
+Intelligence Bureau Inspector Manish Verma questioned the suspect. Officer Verma later returned to the station. Officer Manish Verma filed a report.
+Output:
+Intelligence Bureau Inspector Manish Verma questioned the suspect. Manish Verma later returned to the station. Manish Verma filed a report.
 
 
 ####################
