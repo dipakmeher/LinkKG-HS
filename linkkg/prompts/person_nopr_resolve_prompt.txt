@@ -9,12 +9,12 @@ You are provided with:
 Your task is to:
 1. Find every alias from RESOLVED_ENTITIES within the TEXT_CHUNK. This includes aliases that:
    - Appear inside quotation marks.
-   - Are followed by punctuation (e.g., "Yusuf," should still be replaced).
+   - Are followed by punctuation (e.g., "NameA," should still be replaced).
    - Use capitalization or case variation.
 2. Replace each alias with the corresponding full name exactly as given in RESOLVED_ENTITIES.
-   - For example, if the alias is "Yusuf" and the full name is "Abdullah Yusuf", then "Yusuf," must be replaced with "Abdullah Yusuf," — punctuation must be preserved.
-   - If the alias maps to multiple names (e.g., "Ravi Sharma and Suresh Patil"), use that full string without alteration.
-   - If an alias from RESOLVED_ENTITIES appears multiple times in the text chunk (such as a partial name like “Baron”), you must replace every occurrence of that alias consistently with its corresponding canonical person name when it is used as an entity reference in context. 
+   - For example, if the alias is "LastName" and the full name is "FirstName LastName", then "LastName," must be replaced with "FirstName LastName," — punctuation must be preserved.
+   - If the alias maps to multiple names (e.g., "FirstName LastName and FirstName1 LastName1"), use that full string without alteration.
+   - If an alias from RESOLVED_ENTITIES appears multiple times in the text chunk (such as a partial name like “NameA”), you must replace every occurrence of that alias consistently with its corresponding canonical person name when it is used as an entity reference in context. 
 3. Do not create or guess new names or entities. Only use aliases and names explicitly given in RESOLVED_ENTITIES.
 4. Preserve the sentence structure, legal tone, and punctuation of the original text as much as possible.
 5. Do not insert any content from AUXILIARY_DESCRIPTIONS into the output. You may refer to AUXILIARY_DESCRIPTIONS internally to help disambiguate which RESOLVED_ENTITIES mapping to apply.
