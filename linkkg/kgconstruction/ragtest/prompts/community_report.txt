@@ -72,34 +72,34 @@ id,source,target,description
 16,INSPECTOR RAVI KUMAR,CHECKPOINT VARANASI,Inspector Ravi Kumar is tasked with investigating activities at this critical location.
 
 Output:
-{
+{{
     "title": "Rakshas Syndicate and Checkpoint Varanasi",
     "summary": "The Rakshas Syndicate operates across borders using advanced techniques like hidden compartments and Aravalli routes to smuggle contraband and migrants. Checkpoint Varanasi is a key location for monitoring these activities, with Inspector Ravi Kumar actively investigating the network.",
     "rating": 9.2,
     "rating_explanation": "The severity rating reflects the significant threat posed by narcotics and human trafficking operations spanning international borders.",
     "findings": [
-        {
+        {{
             "summary": "Checkpoint Varanasi as a critical location",
             "explanation": "This checkpoint is a pivotal location for smuggling operations, linking the Rakshas Syndicate to its broader activities. Its strategic significance makes it a focus for both criminal operations and law enforcement. [Data: Entities (1, 2), Relationships (11)]"
-        },
-        {
+        }},
+        {{
             "summary": "Advanced smuggling techniques",
             "explanation": "The use of hidden compartments in vehicles showcases the sophistication of the smuggling methods employed by the organization. These tactics make it challenging for authorities to detect contraband. [Data: Entities (3), Relationships (12)]"
-        },
-        {
+        }},
+        {{
             "summary": "Role of Aravalli routes",
             "explanation": "Aravalli routes provide the organization with a covert pathway to evade detection, enabling uninterrupted transport of contraband and migrants. [Data: Entities (6), Relationships (14)]"
-        },
-        {
+        }},
+        {{
             "summary": "Inspector Ravi Kumar's investigative efforts",
             "explanation": "Inspector Ravi Kumar plays a vital role in monitoring and disrupting operations at Checkpoint Varanasi, underscoring the importance of human oversight in combating these activities. [Data: Entities (4), Relationships (16)]"
-        },
-        {
+        }},
+        {{
             "summary": "Trafficking of narcotics and migrants",
             "explanation": "The organization’s simultaneous trafficking of narcotics like brown sugar and undocumented migrants amplifies the risks and complexities of its operations. [Data: Entities (5, 7), Relationships (13, 15)]"
-        }
+        }}
     ]
-}
+}}
 
 # Real Data
 
