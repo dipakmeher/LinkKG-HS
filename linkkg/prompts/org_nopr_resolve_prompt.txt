@@ -13,7 +13,7 @@ Your task is to:
    - Use capitalization or case variation.
 2. Replace each alias with the corresponding full organization name exactly as given in RESOLVED_ENTITIES.
    - For example, if the alias is "ICE" and the full name is "Immigration and Customs Enforcement (ICE)", then "ICE," must be replaced with "Immigration and Customs Enforcement (ICE)," — punctuation must be preserved.
-   - If the alias maps to multiple names (e.g., "Sinaloa Cartel and Los Zetas Cartel"), use that full string without alteration.
+   - If the alias maps to multiple names (e.g., "NameA and NameB"), use that full string without alteration.
    - If an alias from RESOLVED_ENTITIES appears multiple times in the text chunk (such as a partial name like “the agency”), you must replace every occurrence of that alias consistently with its corresponding canonical organization name when it is used as an entity reference in context.
 
 3. Do not create or guess new names or entities. Only use aliases and names explicitly given in RESOLVED_ENTITIES.
