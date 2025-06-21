@@ -8,7 +8,7 @@ This is an unsupervised coreference resolution task. The rules below are intende
 - Coreference Resolution Rules – Organization Entity Type -
 
 1. Full Name Consistency
-   - Once an organization is introduced with its full official name (e.g., Jamco International, Inc.), all later mentions — including abbreviations (e.g., Jamco), shortened forms (e.g., the company, the firm), or vague references (e.g., it) — must be resolved to the full name.
+   - Once an organization is introduced with its full official name (e.g., J. International, Inc.), all later mentions — including abbreviations (e.g., J.), shortened forms (e.g., the company, the firm), or vague references (e.g., it) — must be resolved to the full name.
 
 2. Remove Role Descriptors
    - Replace phrases like "the carrier", "the broker", "the shipping company" with the full organization name, if contextually referring to a previously introduced organization.
@@ -25,7 +25,7 @@ This is an unsupervised coreference resolution task. The rules below are intende
 
 6. Hyphenated or Embedded Mentions
    - If an organization name appears in a compound (e.g., Jamco-owned lot), resolve the root name to its full form, preserving the compound structure.
-     Example: "Jamco-owned lot" : "Jamco International, Inc.-owned lot"
+     Example: "J.-owned lot" : "J. International, Inc.-owned lot"
 
 7. Avoid Over-resolution
    - Leave vague or ambiguous references unchanged unless context clearly links them to a known organization.
@@ -43,37 +43,37 @@ This is an unsupervised coreference resolution task. The rules below are intende
 
 Example 01
 Input_text:
-Jamco International, Inc. owns the Auburn Road lot. The lot was previously used by Jamco for trailer storage. Later, the company reported a security breach.
+Surya Logistics Pvt. Ltd. owns the MG Road lot. The lot was previously used by Surya for trailer storage. Later, the company reported a security breach.
 
 Output:
-Jamco International, Inc. owns the Auburn Road lot. The lot was previously used by Jamco International, Inc. for trailer storage. Later, Jamco International, Inc. reported a security breach.
+Surya Logistics Pvt. Ltd. owns the MG Road lot. The lot was previously used by Surya Logistics Pvt. Ltd. for trailer storage. Later, Surya Logistics Pvt. Ltd. reported a security breach.
 
---------------------
+⸻
 
 Example 02
 Input_text:
-A representative from Immigration and Customs Enforcement (ICE) conducted the interview. ICE later submitted a report. The agency has been involved in similar cases.
+A representative from Indian Border Intelligence (IBI) conducted the interview. IBI later submitted a report. The agency has been involved in similar cases.
 
 Output:
-A representative from Immigration and Customs Enforcement conducted the interview. Immigration and Customs Enforcement later submitted a report. Immigration and Customs Enforcement has been involved in similar cases.
+A representative from Indian Border Intelligence conducted the interview. Indian Border Intelligence later submitted a report. Indian Border Intelligence has been involved in similar cases.
 
---------------------
+⸻
 
 Example 03
 Input_text:
-USA Trucking was listed as the carrier on the forged BOL. The carrier later confirmed that it had no shipments in Texas during that week. The trucking company’s records support this claim.
+Bharat Freight Carriers was listed as the carrier on the forged BOL. The carrier later confirmed that it had no shipments in Gujarat during that week. The trucking company’s records support this claim.
 
 Output:
-USA Trucking was listed as the carrier on the forged BOL. USA Trucking later confirmed that it had no shipments in Texas during that week. USA Trucking’s records support this claim.
+Bharat Freight Carriers was listed as the carrier on the forged BOL. Bharat Freight Carriers later confirmed that it had no shipments in Gujarat during that week. Bharat Freight Carriers’ records support this claim.
 
---------------------
+⸻
 
 Example 04
 Input_text:
-The United States Court of Appeals for the Fifth Circuit issued a ruling. The court emphasized the importance of procedural compliance. The district court's decision was reversed.
+The High Court of Delhi issued a ruling. The court emphasized the importance of procedural compliance. The lower court’s decision was reversed.
 
 Output:
-The United States Court of Appeals for the Fifth Circuit issued a ruling. The United States Court of Appeals for the Fifth Circuit emphasized the importance of procedural compliance. The United States District Court for the Southern District of Texas's decision was reversed.
+The High Court of Delhi issued a ruling. The High Court of Delhi emphasized the importance of procedural compliance. The District Court of South Delhi’s decision was reversed.
 
 ####################
 === INPUT TEXT ===
