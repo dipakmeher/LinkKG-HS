@@ -53,53 +53,53 @@ Text:
 Entities
 
 id,entity,description
-1,BORDER CHECKPOINT ALPHA,A critical point for monitoring and disrupting smuggling operations.
-2,EAGLE TRAFFICKING RING,A criminal network involved in smuggling contraband, drugs, and migrants.
-3,HIDDEN COMPARTMENT NETWORK,A technique using hidden compartments in vehicles to conceal contraband and migrants.
-4,AGENT CARLOS,An investigator actively monitoring smuggling activities at Border Checkpoint Alpha.
+1,CHECKPOINT VARANASI,A critical point for monitoring and disrupting smuggling operations.
+2,RAKSHAS SYNDICATE,A criminal network involved in smuggling contraband, drugs, and migrants.
+3,SECRET CHAMBER NETWORK,A technique using hidden compartments in vehicles to conceal contraband and migrants.
+4,INSPECTOR RAVI KUMAR,An investigator actively monitoring smuggling activities at Checkpoint Varanasi.
 5,MIGRANTS,Individuals being transported across borders in search of better opportunities or safety.
-6,DESERT ROUTES,Remote paths used to evade law enforcement during smuggling.
-7,COCAINE,An illegal narcotic trafficked alongside other contraband.
+6,ARAVALLI ROUTES,Remote paths used to evade law enforcement during smuggling.
+7,BROWN SUGAR,An illegal narcotic trafficked alongside other contraband.
 
 Relationships
 
 id,source,target,description
-11,BORDER CHECKPOINT ALPHA,EAGLE TRAFFICKING RING,The checkpoint serves as a focal point for the organization’s operations.
-12,EAGLE TRAFFICKING RING,HIDDEN COMPARTMENT NETWORK,The network employs hidden compartments for smuggling activities.
-13,EAGLE TRAFFICKING RING,MIGRANTS,The group smuggles undocumented individuals across borders.
-14,EAGLE TRAFFICKING RING,DESERT ROUTES,Desert routes are crucial for avoiding detection by authorities.
-15,EAGLE TRAFFICKING RING,COCAINE,Narcotics are transported alongside other contraband.
-16,AGENT CARLOS,BORDER CHECKPOINT ALPHA,Agent Carlos is tasked with investigating activities at this critical location.
+11,CHECKPOINT VARANASI,RAKSHAS SYNDICATE,The checkpoint serves as a focal point for the organization’s operations.
+12,RAKSHAS SYNDICATE,SECRET CHAMBER NETWORK,The network employs hidden compartments for smuggling activities.
+13,RAKSHAS SYNDICATE,MIGRANTS,The group smuggles undocumented individuals across borders.
+14,RAKSHAS SYNDICATE,ARAVALLI ROUTES,Desert routes are crucial for avoiding detection by authorities.
+15,RAKSHAS SYNDICATE,BROWN SUGAR,Narcotics are transported alongside other contraband.
+16,INSPECTOR RAVI KUMAR,CHECKPOINT VARANASI,Inspector Ravi Kumar is tasked with investigating activities at this critical location.
 
 Output:
-{{
-    "title": "Eagle Trafficking Ring and Border Checkpoint Alpha",
-    "summary": "The Eagle Trafficking Ring operates across borders using advanced techniques like hidden compartments and desert routes to smuggle contraband and migrants. Border Checkpoint Alpha is a key location for monitoring these activities, with Agent Carlos actively investigating the network.",
+{
+    "title": "Rakshas Syndicate and Checkpoint Varanasi",
+    "summary": "The Rakshas Syndicate operates across borders using advanced techniques like hidden compartments and Aravalli routes to smuggle contraband and migrants. Checkpoint Varanasi is a key location for monitoring these activities, with Inspector Ravi Kumar actively investigating the network.",
     "rating": 9.2,
     "rating_explanation": "The severity rating reflects the significant threat posed by narcotics and human trafficking operations spanning international borders.",
     "findings": [
-        {{
-            "summary": "Border Checkpoint Alpha as a critical location",
-            "explanation": "This checkpoint is a pivotal location for smuggling operations, linking the Eagle Trafficking Ring to its broader activities. Its strategic significance makes it a focus for both criminal operations and law enforcement. [Data: Entities (1, 2), Relationships (11)]"
-        }},
-        {{
+        {
+            "summary": "Checkpoint Varanasi as a critical location",
+            "explanation": "This checkpoint is a pivotal location for smuggling operations, linking the Rakshas Syndicate to its broader activities. Its strategic significance makes it a focus for both criminal operations and law enforcement. [Data: Entities (1, 2), Relationships (11)]"
+        },
+        {
             "summary": "Advanced smuggling techniques",
             "explanation": "The use of hidden compartments in vehicles showcases the sophistication of the smuggling methods employed by the organization. These tactics make it challenging for authorities to detect contraband. [Data: Entities (3), Relationships (12)]"
-        }},
-        {{
-            "summary": "Role of desert routes",
-            "explanation": "Desert routes provide the organization with a covert pathway to evade detection, enabling uninterrupted transport of contraband and migrants. [Data: Entities (6), Relationships (14)]"
-        }},
-        {{
-            "summary": "Agent Carloss investigative efforts",
-            "explanation": "Agent Carlos plays a vital role in monitoring and disrupting operations at Border Checkpoint Alpha, underscoring the importance of human oversight in combating these activities. [Data: Entities (4), Relationships (16)]"
-        }},
-        {{
+        },
+        {
+            "summary": "Role of Aravalli routes",
+            "explanation": "Aravalli routes provide the organization with a covert pathway to evade detection, enabling uninterrupted transport of contraband and migrants. [Data: Entities (6), Relationships (14)]"
+        },
+        {
+            "summary": "Inspector Ravi Kumar's investigative efforts",
+            "explanation": "Inspector Ravi Kumar plays a vital role in monitoring and disrupting operations at Checkpoint Varanasi, underscoring the importance of human oversight in combating these activities. [Data: Entities (4), Relationships (16)]"
+        },
+        {
             "summary": "Trafficking of narcotics and migrants",
-            "explanation": "The organization’s simultaneous trafficking of narcotics like cocaine and undocumented migrants amplifies the risks and complexities of its operations. [Data: Entities (5, 7), Relationships (13, 15)]"
-        }}
+            "explanation": "The organization’s simultaneous trafficking of narcotics like brown sugar and undocumented migrants amplifies the risks and complexities of its operations. [Data: Entities (5, 7), Relationships (13, 15)]"
+        }
     ]
-}}
+}
 
 # Real Data
 
