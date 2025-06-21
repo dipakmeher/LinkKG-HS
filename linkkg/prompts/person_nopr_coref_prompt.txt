@@ -31,15 +31,15 @@ Step 5: Update Auxiliary Descriptions
 
 ---
 Additioal Rules: 
-- RESOLVED_ENTITIES is a dictionary where each key is an alias (such as a noun phrase, or short title like “the defendant”, “the agent”, or “De Arcos”) and each value is the canonical full name of the person it refers to (e.g., “Nicole Shermaine Martinez”).
+- RESOLVED_ENTITIES is a dictionary where each key is an alias (such as a noun phrase, or short title like “the defendant”, “the agent”, or “S.M.”) and each value is the canonical full name of the person it refers to (e.g., “N.S.M”).
 
--If a person’s full name appears in the text (e.g., “Juan Carlos De Arcos”), always use the full name as the canonical reference in RESOLVED_ENTITIES — even if other mentions use shortened or role-based references (e.g., “De Arcos”, “Agent De Arcos”, “the agent”).
+-If a person’s full name appears in the text (e.g., “FirstName LastName”), always use the full name as the canonical reference in RESOLVED_ENTITIES — even if other mentions use shortened or role-based references (e.g., “LastName”, “Agent LastName”, “the agent”).
 
 - If an alias already exists in RESOLVED_ENTITIES but in the current text chunk it clearly refers to a different person, group of persons, or context, you must add a new alias entry to distinguish it from the previous usage. When forming this new alias, prefer to use the core noun phrase and, if needed, one relevant word before and/or after the phrase in the text to help distinguish the new usage. Do not bloat the alias unnecessarily. Add any additional disambiguating details to AUXILIARY_DESCRIPTIONS wherever possible.
 
 - When resolving plural noun phrases, always follow Step 4. Do not collapse plural phrases to a single individual unless explicitly stated.
 
-Yodfu must output strictly valid JSON, with no explanation, commentary, or markdown. The output must begin directly with the opening curly brace `{` and include only the JSON object. Use `null` (not `None`) for unresolved references. The format must match the structure below.
+You must output strictly valid JSON, with no explanation, commentary, or markdown. The output must begin directly with the opening curly brace `{` and include only the JSON object. Use `null` (not `None`) for unresolved references. The format must match the structure below.
 
 Example:
 {
