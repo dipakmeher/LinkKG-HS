@@ -18,14 +18,14 @@ Below are the entity type definitions. Extract only entities that explicitly mat
 
 -Steps-
 1. Extract entities of [{entity_types}] only if they are explicitly written in the input document without inference or completion. For each extracted entity, extract the following information:
-- entity_name: Name of the entity, capitalized.  Do not alter spellings or make corrections. The name should match exactly as written. For example, if 'Jaquez' is extracted as an entity then keep 'Jaquez'. Do not correct it to 'Jacquez'.  
+- entity_name: Name of the entity, capitalized.  Do not alter spellings or make corrections. The name should match exactly as written. For example, if 'NameA' is extracted as an entity then keep 'NameA'. Do not correct it to 'NameAB'.  
 - entity_type: One of the following types: [{entity_types}]
 - entity_description: Comprehensive description of the entitys attributes and activities
 
 Do not extract any entities related to government organizations or legal proceedings, such as court, jury, government, law enforcement, prosecution, homeland security, etc. These are out of scope and must be excluded if extracted entirely.
 
 Extract each entity type separately in the following order:
-- PERSON: Extract all PERSON entities. Title Handling for PERSON entities: If a person’s name appears with a title (e.g., "Border Patrol Agent Bafford Sallee", "Agent Rodriguez", or "Officer David"), extract only the person’s full name (e.g., "Bafford Sallee") as the entity_name. The title (e.g., "Border Patrol Agent") must be included in the entity_description, not in the entity_name.This prevents duplicate nodes and ensures consistent representation of individuals in the knowledge graph.
+- PERSON: Extract all PERSON entities. Title Handling for PERSON entities: If a person’s name appears with a title (e.g., "Border Patrol Agent FirstName LastName", "Agent LastName", or "Officer FirstName1"), extract only the person’s full name (e.g., "FirstName LastName") as the entity_name. The title (e.g., "Border Patrol Agent") must be included in the entity_description, not in the entity_name.This prevents duplicate nodes and ensures consistent representation of individuals in the knowledge graph.
 - LOCATION: Extract all LOCATION entities. If a city and a state appear together (e.g., 'Laredo, Texas' or 'Tucson, Arizona'), treat them as one LOCATION entity in the format 'City, Full State Name'. Do not split them into separate LOCATION entities.
 - MEANS_OF_TRANSPORTATION: Extract all MEANS_OF_TRANSPORTATION entities.
 - MEANS_OF_COMMUNICATION: Extract all MEANS_OF_COMMUNICATION entities.
@@ -148,11 +148,3 @@ Input_text:
 {input_text}
 ######################
 Output:
-
-
-
-
-
-
-
-
