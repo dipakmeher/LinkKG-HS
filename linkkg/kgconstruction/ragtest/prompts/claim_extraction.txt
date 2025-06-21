@@ -26,43 +26,43 @@ Format each claim as (<subject_entity>{tuple_delimiter}<object_entity>{tuple_del
 
 -Examples-
 Example 01:
-Entity specification: organization, person, government_agency, undocumented_non-citizen, driver, routes, means_of_transportation, means_of_communication, fees, nationality
-Claim description: multi-layered smuggling operations involving various entities and activities
-Text: On 2024/03/15, the Falcon Smuggling Network orchestrated a large-scale operation involving the illegal transportation of undocumented non-citizens from Central America to the United States. The group, led by Carlos Mendez, used desert routes and concealed trucks to avoid detection. Javier Morales, a driver for the network, was caught coordinating pickups via encrypted phone calls. Authorities from the Federal Migration Agency intercepted communications and discovered the group charging $5,000 per migrant for the transport. Mexican nationals were among those transported during the operation.
-Output:
-(FALCON SMUGGLING NETWORK{tuple_delimiter}CARLOS MENDEZ{tuple_delimiter}LEADERSHIP IN SMUGGLING NETWORK{tuple_delimiter}CONFIRMED{tuple_delimiter}2023-01-01T00:00:00{tuple_delimiter}2024-03-15T00:00:00{tuple_delimiter}Carlos Mendez was confirmed as the leader orchestrating smuggling operations for the Falcon Smuggling Network{tuple_delimiter}On 2024/03/15, the network was led by Carlos Mendez in coordinating the smuggling of undocumented non-citizens.)
-{record_delimiter}
-(FALCON SMUGGLING NETWORK{tuple_delimiter}TRANSPORTATION METHODS{tuple_delimiter}USE OF TRANSPORTATION IN SMUGGLING{tuple_delimiter}TRUE{tuple_delimiter}2024-03-15T00:00:00{tuple_delimiter}2024-03-15T00:00:00{tuple_delimiter}The Falcon Smuggling Network used trucks with concealed compartments and desert routes to evade law enforcement{tuple_delimiter}Trucks and desert routes were identified as key methods during the operation.)
-{record_delimiter}
-(JAVIER MORALES{tuple_delimiter}NONE{tuple_delimiter}DRIVER INVOLVEMENT IN SMUGGLING OPERATIONS{tuple_delimiter}TRUE{tuple_delimiter}2024-03-15T00:00:00{tuple_delimiter}2024-03-15T00:00:00{tuple_delimiter}Javier Morales was confirmed as a driver coordinating pickups for the Falcon Smuggling Network{tuple_delimiter}On 2024/03/15, Morales coordinated smuggling activities via encrypted phone calls.)
-{record_delimiter}
-(FALCON SMUGGLING NETWORK{tuple_delimiter}PHONE CALLS{tuple_delimiter}COMMUNICATION LEADING TO CRACKDOWN{tuple_delimiter}TRUE{tuple_delimiter}2024-03-15T00:00:00{tuple_delimiter}2024-03-15T00:00:00{tuple_delimiter}Encrypted phone calls were intercepted by the Federal Migration Agency, leading to a successful crackdown{tuple_delimiter}Authorities intercepted calls between the syndicate and its drivers on 2024/03/15.)
-{record_delimiter}
-(FALCON SMUGGLING NETWORK{tuple_delimiter}5000 USD{tuple_delimiter}FEES FOR ILLEGAL TRANSPORTATION{tuple_delimiter}TRUE{tuple_delimiter}2024-03-15T00:00:00{tuple_delimiter}2024-03-15T00:00:00{tuple_delimiter}The Falcon Smuggling Network charged $5,000 per migrant to transport undocumented non-citizens across borders{tuple_delimiter}On 2024/03/15, authorities discovered the network’s pricing for smuggling operations.)
-{record_delimiter}
-(FALCON SMUGGLING NETWORK{tuple_delimiter}MEXICAN NATIONALS{tuple_delimiter}SMUGGLING OF NATIONALITIES{tuple_delimiter}TRUE{tuple_delimiter}2024-03-15T00:00:00{tuple_delimiter}2024-03-15T00:00:00{tuple_delimiter}Mexican nationals were among the undocumented non-citizens transported during the operation{tuple_delimiter}On 2024/03/15, Mexican nationals were smuggled across borders.)
-{completion_delimiter}
+Entity specification: organization, person, government_agency, undocumented_non-citizen, driver, routes, means_of_transportation, means_of_communication, fees, nationality  
+Claim description: multi-layered smuggling operations involving various entities and activities  
+Text: On 2024/03/15, the Falcon Smuggling Network orchestrated a large-scale operation involving the illegal transportation of undocumented non-citizens from South Asia to India. The group, led by Rakesh Verma, used desert routes and concealed trucks to avoid detection. Anil Yadav, a driver for the network, was caught coordinating pickups via encrypted phone calls. Authorities from the National Border Surveillance Agency intercepted communications and discovered the group charging ₹4,00,000 per migrant for the transport. Bangladeshi nationals were among those transported during the operation.  
+Output:  
+(FALCON SMUGGLING NETWORK{tuple_delimiter}RAKESH VERMA{tuple_delimiter}LEADERSHIP IN SMUGGLING NETWORK{tuple_delimiter}CONFIRMED{tuple_delimiter}2023-01-01T00:00:00{tuple_delimiter}2024-03-15T00:00:00{tuple_delimiter}Rakesh Verma was confirmed as the leader orchestrating smuggling operations for the Falcon Smuggling Network{tuple_delimiter}On 2024/03/15, the network was led by Rakesh Verma in coordinating the smuggling of undocumented non-citizens.)  
+{record_delimiter}  
+(FALCON SMUGGLING NETWORK{tuple_delimiter}TRANSPORTATION METHODS{tuple_delimiter}USE OF TRANSPORTATION IN SMUGGLING{tuple_delimiter}TRUE{tuple_delimiter}2024-03-15T00:00:00{tuple_delimiter}2024-03-15T00:00:00{tuple_delimiter}The Falcon Smuggling Network used trucks with concealed compartments and desert routes to evade law enforcement{tuple_delimiter}Trucks and desert routes were identified as key methods during the operation.)  
+{record_delimiter}  
+(ANIL YADAV{tuple_delimiter}NONE{tuple_delimiter}DRIVER INVOLVEMENT IN SMUGGLING OPERATIONS{tuple_delimiter}TRUE{tuple_delimiter}2024-03-15T00:00:00{tuple_delimiter}2024-03-15T00:00:00{tuple_delimiter}Anil Yadav was confirmed as a driver coordinating pickups for the Falcon Smuggling Network{tuple_delimiter}On 2024/03/15, Yadav coordinated smuggling activities via encrypted phone calls.)  
+{record_delimiter}  
+(FALCON SMUGGLING NETWORK{tuple_delimiter}PHONE CALLS{tuple_delimiter}COMMUNICATION LEADING TO CRACKDOWN{tuple_delimiter}TRUE{tuple_delimiter}2024-03-15T00:00:00{tuple_delimiter}2024-03-15T00:00:00{tuple_delimiter}Encrypted phone calls were intercepted by the National Border Surveillance Agency, leading to a successful crackdown{tuple_delimiter}Authorities intercepted calls between the syndicate and its drivers on 2024/03/15.)  
+{record_delimiter}  
+(FALCON SMUGGLING NETWORK{tuple_delimiter}400000 INR{tuple_delimiter}FEES FOR ILLEGAL TRANSPORTATION{tuple_delimiter}TRUE{tuple_delimiter}2024-03-15T00:00:00{tuple_delimiter}2024-03-15T00:00:00{tuple_delimiter}The Falcon Smuggling Network charged ₹4,00,000 per migrant to transport undocumented non-citizens across borders{tuple_delimiter}On 2024/03/15, authorities discovered the network’s pricing for smuggling operations.)  
+{record_delimiter}  
+(FALCON SMUGGLING NETWORK{tuple_delimiter}BANGLADESHI NATIONALS{tuple_delimiter}SMUGGLING OF NATIONALITIES{tuple_delimiter}TRUE{tuple_delimiter}2024-03-15T00:00:00{tuple_delimiter}2024-03-15T00:00:00{tuple_delimiter}Bangladeshi nationals were among the undocumented non-citizens transported during the operation{tuple_delimiter}On 2024/03/15, Bangladeshi nationals were smuggled across borders.)  
+{completion_delimiter}  
 
-######################
-Example 02:
-Entity specification: organization, person, government_agency, drugs, arms, smuggled_items, driver, migrant, location, means_of_transportation, means_of_communication, fees
-Claim description: multi-faceted smuggling operation involving drugs, arms, migrants, and corrupted authorities across multiple locations
-Text:
-On 2024/06/20, authorities uncovered a large-scale operation by the Shadow Syndicate, led by Officer Jorge Martinez, who collaborated with the Border Control Agency to bypass checkpoints. The operation involved smuggling undocumented migrants from Honduras to the United States using desert routes and stash houses in El Paso, Texas. Firearms, rare gemstones, and narcotics, including heroin and fentanyl, were concealed in truck compartments. Javier Morales, a driver for the syndicate, coordinated the transportation through encrypted messaging apps. The syndicate charged $5,000 per migrant to facilitate the crossings.
-Output:
-(SHADOW SYNDICATE{tuple_delimiter}JORGE MARTINEZ{tuple_delimiter}INVOLVEMENT OF CORRUPTED AUTHORITY IN SMUGGLING{tuple_delimiter}TRUE{tuple_delimiter}2024-06-20T00:00:00{tuple_delimiter}2024-06-20T00:00:00{tuple_delimiter}Officer Jorge Martinez collaborated with the Shadow Syndicate to facilitate smuggling operations{tuple_delimiter}On 2024/06/20, Jorge Martinez helped the syndicate bypass checkpoints while smuggling migrants and contraband.)
-{record_delimiter}
-(SHADOW SYNDICATE{tuple_delimiter}HONDURAS{tuple_delimiter}UNITED STATES{tuple_delimiter}SMUGGLING OPERATIONS BETWEEN MULTIPLE LOCATIONS{tuple_delimiter}TRUE{tuple_delimiter}2024-06-20T00:00:00{tuple_delimiter}2024-06-20T00:00:00{tuple_delimiter}The Shadow Syndicate operated smuggling routes from Honduras to the U.S.{tuple_delimiter}On 2024/06/20, migrants were transported across borders using desert routes and stash houses.)
-{record_delimiter}
-(SHADOW SYNDICATE{tuple_delimiter}TRUCKS AND DESERT ROUTES{tuple_delimiter}USE OF TRANSPORTATION AND ROUTES IN SMUGGLING{tuple_delimiter}TRUE{tuple_delimiter}2024-06-20T00:00:00{tuple_delimiter}2024-06-20T00:00:00{tuple_delimiter}The Shadow Syndicate used trucks with hidden compartments and desert routes to evade detection during smuggling operations{tuple_delimiter}On 2024/06/20, authorities identified these methods as key to their smuggling operations.)
-{record_delimiter}
-(SHADOW SYNDICATE{tuple_delimiter}EL PASO STASH HOUSE{tuple_delimiter}USE OF STASH HOUSE IN SMUGGLING{tuple_delimiter}TRUE{tuple_delimiter}2024-06-20T00:00:00{tuple_delimiter}2024-06-20T00:00:00{tuple_delimiter}The stash house in El Paso was used to temporarily hold migrants and contraband before transportation{tuple_delimiter}On 2024/06/20, the syndicate used the location as a staging point for smuggling operations.)
-{record_delimiter}
-(SHADOW SYNDICATE{tuple_delimiter}COMMUNICATION AND COORDINATION{tuple_delimiter}USE OF ENCRYPTED MESSAGES AND DRIVERS{tuple_delimiter}TRUE{tuple_delimiter}2024-06-20T00:00:00{tuple_delimiter}2024-06-20T00:00:00{tuple_delimiter}Encrypted messaging apps and drivers like Javier Morales were used for coordination{tuple_delimiter}On 2024/06/20, authorities intercepted messages detailing smuggling activities.)
-{record_delimiter}
-(SHADOW SYNDICATE{tuple_delimiter}5000 USD{tuple_delimiter}FEES FOR ILLEGAL TRANSPORTATION{tuple_delimiter}TRUE{tuple_delimiter}2024-06-20T00:00:00{tuple_delimiter}2024-06-20T00:00:00{tuple_delimiter}The syndicate charged $5,000 per migrant for smuggling services{tuple_delimiter}On 2024/06/20, the pricing for smuggling operations was revealed.)
-{record_delimiter}
-(SHADOW SYNDICATE{tuple_delimiter}CONTRABAND{tuple_delimiter}NARCOTICS, ARMS, AND VALUABLES SMUGGLING{tuple_delimiter}TRUE{tuple_delimiter}2024-06-20T00:00:00{tuple_delimiter}2024-06-20T00:00:00{tuple_delimiter}The syndicate smuggled heroin, fentanyl, firearms, and rare gemstones concealed in trucks{tuple_delimiter}On 2024/06/20, authorities intercepted contraband hidden in truck compartments.)
+######################  
+Example 02:  
+Entity specification: organization, person, government_agency, drugs, arms, smuggled_items, driver, migrant, location, means_of_transportation, means_of_communication, fees  
+Claim description: multi-faceted smuggling operation involving drugs, arms, migrants, and corrupted authorities across multiple locations  
+Text:  
+On 2024/06/20, authorities uncovered a large-scale operation by the Shadow Syndicate, led by Inspector Rajeev Sinha, who collaborated with the Border Protection Task Force to bypass checkpoints. The operation involved smuggling undocumented migrants from Bangladesh to India using desert routes and stash houses in Jaisalmer, Rajasthan. Firearms, rare gemstones, and narcotics, including heroin and fentanyl, were concealed in truck compartments. Anil Yadav, a driver for the syndicate, coordinated the transportation through encrypted messaging apps. The syndicate charged ₹4,00,000 per migrant to facilitate the crossings.  
+Output:  
+(SHADOW SYNDICATE{tuple_delimiter}RAJEEV SINHA{tuple_delimiter}INVOLVEMENT OF CORRUPTED AUTHORITY IN SMUGGLING{tuple_delimiter}TRUE{tuple_delimiter}2024-06-20T00:00:00{tuple_delimiter}2024-06-20T00:00:00{tuple_delimiter}Inspector Rajeev Sinha collaborated with the Shadow Syndicate to facilitate smuggling operations{tuple_delimiter}On 2024/06/20, Rajeev Sinha helped the syndicate bypass checkpoints while smuggling migrants and contraband.)  
+{record_delimiter}  
+(SHADOW SYNDICATE{tuple_delimiter}BANGLADESH{tuple_delimiter}INDIA{tuple_delimiter}SMUGGLING OPERATIONS BETWEEN MULTIPLE LOCATIONS{tuple_delimiter}TRUE{tuple_delimiter}2024-06-20T00:00:00{tuple_delimiter}2024-06-20T00:00:00{tuple_delimiter}The Shadow Syndicate operated smuggling routes from Bangladesh to India{tuple_delimiter}On 2024/06/20, migrants were transported across borders using desert routes and stash houses.)  
+{record_delimiter}  
+(SHADOW SYNDICATE{tuple_delimiter}TRUCKS AND DESERT ROUTES{tuple_delimiter}USE OF TRANSPORTATION AND ROUTES IN SMUGGLING{tuple_delimiter}TRUE{tuple_delimiter}2024-06-20T00:00:00{tuple_delimiter}2024-06-20T00:00:00{tuple_delimiter}The Shadow Syndicate used trucks with hidden compartments and desert routes to evade detection during smuggling operations{tuple_delimiter}On 2024/06/20, authorities identified these methods as key to their smuggling operations.)  
+{record_delimiter}  
+(SHADOW SYNDICATE{tuple_delimiter}JAISALMER STASH HOUSE{tuple_delimiter}USE OF STASH HOUSE IN SMUGGLING{tuple_delimiter}TRUE{tuple_delimiter}2024-06-20T00:00:00{tuple_delimiter}2024-06-20T00:00:00{tuple_delimiter}The stash house in Jaisalmer was used to temporarily hold migrants and contraband before transportation{tuple_delimiter}On 2024/06/20, the syndicate used the location as a staging point for smuggling operations.)  
+{record_delimiter}  
+(SHADOW SYNDICATE{tuple_delimiter}COMMUNICATION AND COORDINATION{tuple_delimiter}USE OF ENCRYPTED MESSAGES AND DRIVERS{tuple_delimiter}TRUE{tuple_delimiter}2024-06-20T00:00:00{tuple_delimiter}2024-06-20T00:00:00{tuple_delimiter}Encrypted messaging apps and drivers like Anil Yadav were used for coordination{tuple_delimiter}On 2024/06/20, authorities intercepted messages detailing smuggling activities.)  
+{record_delimiter}  
+(SHADOW SYNDICATE{tuple_delimiter}400000 INR{tuple_delimiter}FEES FOR ILLEGAL TRANSPORTATION{tuple_delimiter}TRUE{tuple_delimiter}2024-06-20T00:00:00{tuple_delimiter}2024-06-20T00:00:00{tuple_delimiter}The syndicate charged ₹4,00,000 per migrant for smuggling services{tuple_delimiter}On 2024/06/20, the pricing for smuggling operations was revealed.)  
+{record_delimiter}  
+(SHADOW SYNDICATE{tuple_delimiter}CONTRABAND{tuple_delimiter}NARCOTICS, ARMS, AND VALUABLES SMUGGLING{tuple_delimiter}TRUE{tuple_delimiter}2024-06-20T00:00:00{tuple_delimiter}2024-06-20T00:00:00{tuple_delimiter}The syndicate smuggled heroin, fentanyl, firearms, and rare gemstones concealed in trucks{tuple_delimiter}On 2024/06/20, authorities intercepted contraband hidden in truck compartments.)  
 {completion_delimiter}
 
 
